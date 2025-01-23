@@ -20,6 +20,10 @@ const router = useRouter()
 // Methods.
 const { addScore } = useScoresStore()
 const saveScore = async () => {
+  if (!playerName.value) {
+    return
+  }
+
   await addScore({
     name: playerName.value,
     points: score.value,
@@ -43,7 +47,7 @@ const startGame = () => {
     if (time.value <= 0) {
       stopGame(interval)
     } else {
-      if (!currentHole.value) {
+      if (!currentHole.value && !whackedHole.value) {
         showAndHideWeidel()
       }
     }
@@ -63,9 +67,7 @@ const showAndHideWeidel = () => {
   currentDuration.value = getRandomDuration()
 
   setTimeout(() => {
-    if (currentHole.value !== whackedHole.value) {
-      currentHole.value = null
-    }
+    currentHole.value = null
   }, currentDuration.value)
 }
 
@@ -75,10 +77,7 @@ const whack = (i) => {
 
   setTimeout(() => {
     whackedHole.value = null
-    if (currentHole.value === i) {
-      currentHole.value = null
-    }
-  }, 300)
+  }, 250)
 }
 
 // Mounted.
@@ -127,7 +126,7 @@ onMounted(() => {
       <div v-for="i in rows * cols" :key="`hole-${i}`" class="hole">
         <div class="dirt">
           <Transition name="slide-up">
-            <div v-if="currentHole === i" @click="whack(i)" class="white-supremacist-bitch">
+            <div v-if="currentHole === i || whackedHole === i" @click="whack(i)" class="white-supremacist-bitch">
               <img v-if="whackedHole === i" src="/stars-over-head.webp" alt="">
               <img src="/weidel.webp" alt="Frau Weidels Kopf">
             </div>
