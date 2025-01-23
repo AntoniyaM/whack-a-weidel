@@ -1,0 +1,13 @@
+.container {
+  width: 90vw;
+  max-width: 1400px;
+  margin-inline: auto;
+
+  @include bp(m) {
+    width: 70vw;
+  }
+
+  @include bp(xl) {
+    width: 58vw;
+  }
+}

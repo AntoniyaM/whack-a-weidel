@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+body {
+  background: $color-bg;
+  color: $color-text;
+  font-family: $font-family;
+  margin: 0;
+}
+
+h1 {
+  margin-block: 2rem;
+}
+
+strong {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+#app {
+  min-height: 100dvh;
+}
+
+// Some utility classes.
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+// Beautiful variable font.
+@font-face {
+  font-family: 'Hubot Sans';
+  src: url('/Hubot-Sans.ttf') format('truetype-variations');
+  font-weight: 1 999;
+}
+$font-family: 'Hubot Sans', sans-serif;
+
+// Colors.
+$color-bg: #e8f2ff;
+$color-text: #343434;
+$color-primary: #009ee0;
+$color-info: #00bcd4;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #dedede;
+
+// Misc.
+$border-radius: 6px;

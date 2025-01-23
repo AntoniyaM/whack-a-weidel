@@ -1,0 +1,24 @@
+.button {
+  display: inline-flex;
+  background: $color-primary;
+  color: $color-white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: $border-radius;
+  padding-block: 0.75rem;
+  padding-inline: 2rem;
+  box-shadow: 0 3px 1px -2px rgba($color-text, 0.2),0 2px 2px rgba($color-text, 0.2),0 1px 5px rgba($color-text, 0.2);
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s;
+
+  &:active {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.button--outline {
+  background: $color-white;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+}

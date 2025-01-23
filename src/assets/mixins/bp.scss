@@ -1,0 +1,31 @@
+// Defines styling for a specific breakpoint.
+$breakpoints: (
+  xs: (
+    dir: min,
+    size: 0,
+  ),
+  m: (
+    dir: min,
+    size: 1001px,
+  ),
+  xl: (
+    dir: min,
+    size: 1401px,
+  ),
+);
+
+@mixin bp($bp) {
+  @if map_has_key($breakpoints, $bp) {
+    $size: map_get(map_get($breakpoints, $bp), size);
+
+    @if $size == 0 {
+      @content;
+    } @else {
+      @media only screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'Using the "bp" mixin failed. Breakpoint "#{$bp}" does not exist. Available breakpoints are "#{map_keys($breakpoints)}"';
+  }
+}
