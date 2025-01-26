@@ -37,7 +37,10 @@ const topScores = computed(() => {
           {{ score.points }}
         </span>
       </div>
-      <small class="text-center">I made you mad? Great, I don't give a f*ck. 🖕</small>
+      <small class="text-center">
+        I made you mad? Great, I don't give a f*ck.
+        <img src="/trollface.webp" alt="">
+      </small>
     </TransitionGroup>
   </div>
 </template>
@@ -61,6 +64,19 @@ const topScores = computed(() => {
 
   span {
     font-weight: 900;
+  }
+}
+
+small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+
+  img {
+    width: 12%;
+    max-width: 30px;
   }
 }
 </style>

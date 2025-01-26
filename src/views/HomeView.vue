@@ -72,6 +72,10 @@ const showAndHideWeidel = () => {
 }
 
 const whack = (i) => {
+  if (whackedHole.value) {
+    return
+  }
+
   score.value = score.value + 10
   whackedHole.value = i
 
