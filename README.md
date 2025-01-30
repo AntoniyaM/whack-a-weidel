@@ -4,6 +4,9 @@ Just for kicks.
 
 ⚠️ *Disclaimer: this particular game implementation is politically biased.*
 
+https://whack-a-weidel.marioniya.space/
+
+![screenshot.png](public/screenshot.png)
 
 ## Project Setup
 
